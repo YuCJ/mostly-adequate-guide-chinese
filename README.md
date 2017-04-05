@@ -26,9 +26,9 @@
 
 ### Gitbook (更好的閱讀體驗)
 
-* [線上閱讀](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
-* [下載EPUB](https://www.gitbook.com/download/epub/book/llh911001/mostly-adequate-guide-chinese)
-* [下載Mobi (Kindle)](https://www.gitbook.com/download/mobi/book/llh911001/mostly-adequate-guide-chinese)
+* [線上閱讀](https://yucj.gitbooks.io/mostly-adequate-guide-traditional-chinese/content/)
+* [下載EPUB](https://www.gitbook.com/download/epub/book/yucj/mostly-adequate-guide-traditional-chinese)
+* [下載Mobi (Kindle)](https://www.gitbook.com/download/mobi/book/yucj/mostly-adequate-guide-traditional-chinese)
 
 
 # 目錄
