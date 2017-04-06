@@ -237,7 +237,7 @@ var applyPreferences = compose(
 );
 ```
 
-我把所有的 `map/join` 都替換為了 `chain`，這樣程式碼就顯得整潔了些。整潔固然是好事，但 `chain` 的能力卻不止於此——它更多的是龍捲風而不是吸塵器。因為 `chain` 可以輕鬆地巢狀多個作用，因此我們就能以一種純函式式的方式來表示 *序列*（sequence） 和 *變數賦值*（variable assignment）。
+我把所有的 `map/join` 都替換為了 `chain`，這樣程式碼就顯得整潔了些。整潔固然是好事，但 `chain` 的能力卻不止於此——它更多的是龍捲風而不是吸塵器。因為 `chain` 可以輕鬆地巢狀多個作用，因此我們就能以一種純函數式的方式來表示 *序列*（sequence） 和 *變數賦值*（variable assignment）。
 
 ```js
 // getJSON :: Url -> Params -> Task JSON
@@ -275,7 +275,7 @@ Maybe.of(null).chain(safeProp('address')).chain(safeProp('street'));
 
 好了，我們來看上面的例子。第一個例子中，可以看到兩個 `Task` 通過 `chain` 連線形成了一個非同步操作的序列——它先獲取 `user`，然後用 `user.id` 查詢 `user` 的 `friends`。`chain` 避免了 `Task(Task([Friend]))` 這種情況。
 
-第二個例子是用 `querySelector` 查詢幾個 input 然後建立一條歡迎資訊。注意看我們是如何在最內層的函式裡訪問 `uname` 和 `email` 的——這是函式式變數賦值的絕佳表現。因為 `IO` 大方地把它的值借給了我們，我們也要負起以同樣方式把值放回去的責任——不能辜負它的信任（還有整個程式的信任）。`IO.of` 非常適合做這件事，同時它也解釋了為何 pointed 這一特性是 monad 介面得以存在的重要前提。不過，`map` 也能返回正確的型別：
+第二個例子是用 `querySelector` 查詢幾個 input 然後建立一條歡迎資訊。注意看我們是如何在最內層的函式裡訪問 `uname` 和 `email` 的——這是函數式變數賦值的絕佳表現。因為 `IO` 大方地把它的值借給了我們，我們也要負起以同樣方式把值放回去的責任——不能辜負它的信任（還有整個程式的信任）。`IO.of` 非常適合做這件事，同時它也解釋了為何 pointed 這一特性是 monad 介面得以存在的重要前提。不過，`map` 也能返回正確的型別：
 
 ```js
 querySelector("input.username").chain(function(uname) {

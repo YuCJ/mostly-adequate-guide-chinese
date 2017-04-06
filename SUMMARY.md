@@ -24,7 +24,7 @@
   * [總結](ch5.md#總結)
 * [第 6章: 示例應用](ch6.md)
   * [宣告式程式碼](ch6.md#宣告式程式碼)
-  * [一個函式式的 flickr](ch6.md#一個函式式的-flickr)
+  * [一個函數式的 flickr](ch6.md#一個函數式的-flickr)
   * [有原則的重構](ch6.md#有原則的重構)
   * [總結](ch6.md#總結)
 * [第 7 章: Hindley-Milner 型別簽名](ch7.md)

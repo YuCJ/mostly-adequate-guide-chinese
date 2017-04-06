@@ -6,9 +6,9 @@
 
 <img src="images/jar.jpg" alt="http://blog.dwinegar.com/2011/06/another-jar.html" />
 
-我們已經知道如何書寫函式式的程式了，即通過管道把資料在一系列純函式間傳遞的程式。我們也知道了，這些程式就是宣告式的行為規範。但是，控制流（control flow）、異常處理（error handling）、非同步操作（asynchronous actions）和狀態（state）呢？還有更棘手的作用（effects）呢？本章將對上述這些抽象概念賴以建立的基礎作一番探究。
+我們已經知道如何書寫函數式的程式了，即通過管道把資料在一系列純函式間傳遞的程式。我們也知道了，這些程式就是宣告式的行為規範。但是，控制流（control flow）、異常處理（error handling）、非同步操作（asynchronous actions）和狀態（state）呢？還有更棘手的作用（effects）呢？本章將對上述這些抽象概念賴以建立的基礎作一番探究。
 
-首先我們將建立一個容器（container）。這個容器必須能夠裝載任意型別的值；否則的話，像只能裝木薯布丁的密封塑料袋是沒什麼用的。這個容器將會是一個物件，但我們不會為它新增面向物件觀念下的屬性和方法。是的，我們將把它當作一個百寶箱——一個存放寶貴的資料的特殊盒子。
+首先我們將建立一個容器（container）。這個容器必須能夠裝載任意型別的值；否則的話，像只能裝木薯布丁的密封塑料袋是沒什麼用的。這個容器將會是一個物件，但我們不會為它新增物件導向觀念下的屬性和方法。是的，我們將把它當作一個百寶箱——一個存放寶貴的資料的特殊盒子。
 
 ```js
 var Container = function(x) {
@@ -123,7 +123,7 @@ Maybe.of({name: "Dinah", age: 14}).map(_.prop("age")).map(add(10));
 
 注意看，當傳給 `map` 的值是 `null` 時，程式碼並沒有爆出錯誤。這是因為每一次 `Maybe` 要呼叫函式的時候，都會先檢查它自己的值是否為空。
 
-這種點記法（dot notation syntax）已經足夠函式式了，但是正如在第 1 部分指出的那樣，我們更想保持一種 pointfree 的風格。碰巧的是，`map` 完全有能力以 curry 函式的方式來“代理”任何 functor：
+這種點記法（dot notation syntax）已經足夠函數式了，但是正如在第 1 部分指出的那樣，我們更想保持一種 pointfree 的風格。碰巧的是，`map` 完全有能力以 curry 函式的方式來“代理”任何 functor：
 
 ```js
 //  map :: Functor f => (a -> b) -> f a -> f b
